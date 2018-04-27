@@ -36,10 +36,10 @@ DISK2=`df -h | grep 'dev/root' | awk '{print $3}'`    # Belegt
 DISK3=`df -h | grep 'dev/root' | awk '{print $4}'`    # Frei
  
 # Arbeitsspeicher
-RAM1=`free -h -o | grep 'Mem' | awk '{print $2}'`    # Total
-RAM2=`free -h -o | grep 'Mem' | awk '{print $3}'`    # Used
-RAM3=`free -h -o | grep 'Mem' | awk '{print $4}'`    # Free
-RAM4=`free -h -o | grep 'Swap' | awk '{print $3}'`    # Swap used
+RAM1=`free -h | grep 'Mem' | awk '{print $2}'`    # Total
+RAM2=`free -h | grep 'Mem' | awk '{print $3}'`    # Used
+RAM3=`free -h | grep 'Mem' | awk '{print $4}'`    # Free
+RAM4=`free -h | grep 'Swap' | awk '{print $3}'`    # Swap used
  
 # IP-Adressen ermitteln
 if ( ifconfig | grep -q "eth0" ) ; then IP_LAN=`ifconfig eth0 | grep "inet Adresse" | cut -d ":" -f 2 | cut -d " " -f 1` ; else IP_LAN="---" ; fi ;
